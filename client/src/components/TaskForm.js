@@ -47,7 +47,7 @@ const TaskForm = () => {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(task),
           }
-        );
+        ); 
         await response.json();
       } else {
         const response = await fetch("http://localhost:4000/tasks", {
@@ -84,13 +84,13 @@ const TaskForm = () => {
           }}
         >
           <Typography variant="h5" textAlign="center" color="white">
-            {editing ? "Update Task" : "Create Task"}
+            {editing ? "Update Task" : "Crear tarea"}
           </Typography>
           <CardContent>
             <form onSubmit={handleSubmit}>
               <TextField
                 variant="filled"
-                label="Write your Title"
+                label="Escribe la tarea"
                 sx={{
                   display: "block",
                   margin: ".5rem 0",
@@ -103,7 +103,7 @@ const TaskForm = () => {
               />
               <TextField
                 variant="outlined"
-                label="Write your Description"
+                label="Describe la tarea"
                 multiline
                 rows={4}
                 sx={{
@@ -126,7 +126,7 @@ const TaskForm = () => {
                 {loading ? (
                   <CircularProgress color="inherit" size={25} />
                 ) : (
-                  "Save"
+                  "Guardar"
                 )}
               </Button>
             </form>
