@@ -29,7 +29,7 @@ const TaskForm = () => {
   }, [params.id]);
 
   const loadTask = async (id) => {
-    const res = await fetch("http://localhost:4000/tasks/" + id);
+    const res = await fetch("http://main.d1as6rhcbvybw2.amplifyapp.com:4000/tasks/" + id);
     const data = await res.json();
     setTask({ title: data.title, description: data.description });
     setEditing(true);
