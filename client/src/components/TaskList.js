@@ -7,14 +7,14 @@ export default function TaskList() {
   const navigate = useNavigate()
 
   const loadTask = async () =>{
-   const response = await fetch('http://localhost:4000/tasks')
+   const response = await fetch('http://main.d1as6rhcbvybw2.amplifyapp.com:4000/tasks')
 
    const data = await response.json()
    setTasks(data)
   }
   const handleDelete = async (id) =>{
   try {
-    await fetch(`http://localhost:4000/tasks/${id}`,{
+    await fetch(`http://main.d1as6rhcbvybw2.amplifyapp.com:4000/tasks/${id}`,{
       method:'DELETE',
     })
     setTasks(
